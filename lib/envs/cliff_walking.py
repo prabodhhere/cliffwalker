@@ -29,17 +29,15 @@ class CliffWalkingEnv(discrete.DiscreteEnv):
 
     def __init__(self, shape, start, end_bars, cliff_bars):
         self.shape = shape
-        self.start = start
+        self.start_state_index = np.ravel_multi_index(start, self.shape)
         self.end = end_bars
         nS = np.prod(self.shape)
         nA = 4
 
-        # Cliff Location
         self._cliff = np.zeros(self.shape, dtype=np.bool)
         for cliff in cliff_bars:
             self._cliff[cliff] = True
 
-        # Calculate transition probabilities
         P = {}
         for s in range(nS):
             position = np.unravel_index(s, self.shape)
@@ -49,9 +47,8 @@ class CliffWalkingEnv(discrete.DiscreteEnv):
             P[s][DOWN] = self._calculate_transition_prob(position, [1, 0])
             P[s][LEFT] = self._calculate_transition_prob(position, [0, -1])
 
-        # We always start in state (3, 0)
         isd = np.zeros(nS)
-        isd[np.ravel_multi_index(self.start, self.shape)] = 1.0
+        isd[self.start_state_index] = 1.0
 
         super(CliffWalkingEnv, self).__init__(nS, nA, P, isd)
 
@@ -66,7 +63,6 @@ class CliffWalkingEnv(discrete.DiscreteEnv):
 
         for s in range(self.nS):
             position = np.unravel_index(s, self.shape)
-            # print(self.s)
             if self.s == s:
                 output = " x "
             elif position in self.end:
