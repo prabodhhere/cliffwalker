@@ -10,7 +10,8 @@ class QLearningAgent:
         self.alpha = alpha
         self.epsilon = epsilon
         self.discount = discount
-        self.rewards = []
+        self.episode_rewards = []
+        self.episode_lengths = []
 
     def get_qvalue(self, state, action):
         return self._qvalues[state][action]
@@ -68,6 +69,7 @@ class QLearningAgent:
         return chosen_action
 
     def train(self, env, n_episodes=5000, t_max=10**4, verbose=True, verbose_per_episode=100):
+        print("\nTraining {}.".format(self.__class__.__name__))
         for i in range(n_episodes):
             episode_reward = 0.0
             s = env.reset()
@@ -78,13 +80,15 @@ class QLearningAgent:
                 self.update(s, a, r, next_s)
                 s = next_s
                 episode_reward +=r
-                if done:break
-            self.rewards.append(episode_reward)
+                if done:
+                    self.episode_lengths.append(t+1)
+                    break
+            self.episode_rewards.append(episode_reward)
 
             if verbose:
                 if i % verbose_per_episode == 0:
-                    print('Episode {} done. Mean reward = {}'.format(i+1, np.mean(self.rewards[-100:])))
-        print('Training {} episodes done. Mean reward = {}'.format(n_episodes, np.mean(self.rewards[-100:])))
+                    print('Episode {} done. Mean reward = {}'.format(i+1, np.mean(self.episode_rewards[-100:])))
+        print('Training {} episodes done. Mean reward = {}\n'.format(n_episodes, np.mean(self.episode_rewards[-100:])))
 
 class EVSarsaAgent(QLearningAgent):
 

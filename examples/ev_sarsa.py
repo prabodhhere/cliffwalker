@@ -17,6 +17,7 @@ env = CliffWalkingEnv(env_shape, start_position, end_positions, cliff)
 n_actions = env.action_space.n
 agent = EVSarsaAgent(alpha=0.5, epsilon=0.1, discount=0.99, n_actions=n_actions)
 
-agent.train(env, n_episodes=5000, t_max=10**3, verbose=True, verbose_per_episode=500)
+agent.train(env, n_episodes=1000, t_max=10**3, verbose=True, verbose_per_episode=500)
 
 plotting.draw_policy(env, agent)
+plotting.plot_episode_stats(agent)
