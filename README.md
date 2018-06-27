@@ -13,13 +13,15 @@ Cliffwalker is implementation of Q Learning and Expected Value SARSA agents on v
 
 Cliffwalking
 ------------
->o  o  o  o  o  o  o  o  o  o  o  o
+```
+o  o  o  o  o  o  o  o  o  o  o  o
 
->o  o  o  o  o  o  o  o  o  o  o  o
+o  o  o  o  o  o  o  o  o  o  o  o
 
->o  o  o  o  o  o  o  o  o  o  o  o
+o  o  o  o  o  o  o  o  o  o  o  o
 
->x  C  C  C  C  C  C  C  C  C  C  T
+x  C  C  C  C  C  C  C  C  C  C  T
+```
 
 Requirements
 ------------
