@@ -14,6 +14,7 @@ Cliffwalker is implementation of Q Learning and Expected Value SARSA agents on v
 Cliffwalking
 ------------
 **Example 6.6 in _Reinforcement Learning: An Introduction_**
+An agent x has to reach T while avoiding the cliff denoted by Cs.
 ```
 o  o  o  o  o  o  o  o  o  o  o  o
 o  o  o  o  o  o  o  o  o  o  o  o
