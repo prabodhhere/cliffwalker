@@ -36,7 +36,7 @@ Q Learning policy
 >  >  >  >  >  >  >  >  >  >  >  v
 X  C  C  C  C  C  C  C  C  C  C  T
 ```
-![Cliffwalking rewards](https://github.com/prabodhhere/cliffwalker/tree/master/examples/cliffwalking.png "Cliffwalking rewards")
+![Cliffwalking rewards](./examples/cliffwalking.png "Cliffwalking rewards")
 
 Requirements
 ------------
