@@ -4,7 +4,7 @@ cliffwalker
 
 UNDER CONSTRUCTION
 
-Cliffwalker is implementation of Q Learning and Expected Value SARSA agents on variations of the Gridworld Cliff reinforcement learning task as in example 6.6 in Reinforcement Learning: An Introduction [[1]](#references)
+Cliffwalker is implementation of Q Learning and Expected Value SARSA agents on variations of the Gridworld Cliff reinforcement learning task as in example 6.6 in *Reinforcement Learning: An Introduction* [[1]](#references)
 
 - [x] Q Learning
 - [x] Expected Value SARSA
@@ -13,15 +13,30 @@ Cliffwalker is implementation of Q Learning and Expected Value SARSA agents on v
 
 Cliffwalking
 ------------
+Example 6.6 in *Reinforcement Learning: An Introduction*
 ```
 o  o  o  o  o  o  o  o  o  o  o  o
-
 o  o  o  o  o  o  o  o  o  o  o  o
-
 o  o  o  o  o  o  o  o  o  o  o  o
-
 x  C  C  C  C  C  C  C  C  C  C  T
 ```
+
+SARSA policy
+```
+>  >  >  >  >  >  >  >  >  >  >  v
+>  >  >  >  >  >  >  >  >  >  >  v
+^  ^  ^  ^  ^  ^  ^  ^  ^  >  >  v
+X  C  C  C  C  C  C  C  C  C  C  T
+```
+
+Q Learning policy
+```
+^  ^  >  >  >  v  >  >  >  >  >  v
+>  >  >  >  >  >  >  >  >  >  >  v
+>  >  >  >  >  >  >  >  >  >  >  v
+X  C  C  C  C  C  C  C  C  C  C  T
+```
+![Cliffwalking rewards](https://github.com/prabodhhere/cliffwalker/tree/master/examples/cliffwalking.png)
 
 Requirements
 ------------
