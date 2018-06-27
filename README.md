@@ -9,7 +9,7 @@ Cliffwalker is implementation of Q Learning and Expected Value SARSA agents on v
 - [x] Q Learning
 - [x] Expected Value SARSA
 - [x] Gridworld Cliff
-- [ ] Variations of Gridworld Cliff
+- [x] Variations of Gridworld Cliff
 
 Cliffwalking
 ------------
